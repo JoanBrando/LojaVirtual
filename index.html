@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oásis Fashion</title>
+    <link rel="icon" type="imagens/favicon" href="../LojaVirtual/img/Oásis Favicon/oasis.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#home" class="logo">OÁSIS FASHION</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#produtos" class="dropbtn">Produtos <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#vestidos">Vestidos</a>
+                            <a href="#blusas">Blusas</a>
+                            <a href="#calcas">Calças</a>
+                            <a href="#acessorios">Acessórios</a>
+                        </div>
+                    </li>
+                    <li><a href="#carrinho">Carrinho <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section scroll-effect">
+            <div class="container">
+                <h1>Bem-vinda à Oásis Fashion</h1>
+                <p>Descubra as últimas tendências em moda feminina.</p>
+                <a href="#produtos" class="btn">Ver Coleção</a>
+            </div>
+        </section>
+
+        <section id="produtos" class="products-section scroll-effect">
+            <div class="container">
+                <h2>Nossos Produtos</h2>
+                <div class="product-grid">
+                    <div class="product-card scroll-effect-item">
+                        <img src="img/produto1.jpg" alt="Vestido Floral">
+                        <h3>Vestido Floral</h3>
+                        <p>R$ 199,90</p>
+                        <button class="btn add-to-cart-btn" data-id="1" data-name="Vestido Floral" data-price="199.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card scroll-effect-item">
+                        <img src="img/produto2.jpg" alt="Blusa de Seda">
+                        <h3>Blusa de Seda</h3>
+                        <p>R$ 129,90</p>
+                        <button class="btn add-to-cart-btn" data-id="2" data-name="Blusa de Seda" data-price="129.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card scroll-effect-item">
+                        <img src="img/produto3.jpg" alt="Calça Jeans Skinny">
+                        <h3>Calça Jeans Skinny</h3>
+                        <p>R$ 159,90</p>
+                        <button class="btn add-to-cart-btn" data-id="3" data-name="Calça Jeans Skinny" data-price="159.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card scroll-effect-item">
+                        <img src="img/produto4.jpg" alt="Bolsa de Couro">
+                        <h3>Bolsa de Couro</h3>
+                        <p>R$ 249,90</p>
+                        <button class="btn add-to-cart-btn" data-id="4" data-name="Bolsa de Couro" data-price="249.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vestidos" class="products-section category-section scroll-effect">
+            <div class="container">
+                <h2>Vestidos</h2>
+                <div class="product-grid">
+                    <div class="product-card scroll-effect-item">
+                        <img src="img/vestido_longo.jpg" alt="Vestido Longo Estampado">
+                        <h3>Vestido Longo Estampado</h3>
+                        <p>R$ 299,90</p>
+                        <button class="btn add-to-cart-btn" data-id="5" data-name="Vestido Longo Estampado" data-price="299.90">Adicionar ao Carrinho</button>
+                    </div>
+                    <div class="product-card scroll-effect-item">
+                        <img src="img/vestido_curto.jpg" alt="Vestido Curto de Festa">
+                        <h3>Vestido Curto de Festa</h3>
+                        <p>R$ 229,90</p>
+                        <button class="btn add-to-cart-btn" data-id="6" data-name="Vestido Curto de Festa" data-price="229.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blusas" class="products-section category-section scroll-effect">
+            <div class="container">
+                <h2>Blusas</h2>
+                <div class="product-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="calcas" class="products-section category-section scroll-effect">
+            <div class="container">
+                <h2>Calças</h2>
+                <div class="product-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="acessorios" class="products-section category-section scroll-effect">
+            <div class="container">
+                <h2>Acessórios</h2>
+                <div class="product-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="carrinho" class="cart-section scroll-effect">
+            <div class="container">
+                <h2>Seu Carrinho de Compras</h2>
+                <div id="cart-items">
+                    <p>Seu carrinho está vazio.</p>
+                </div>
+                <div id="cart-total">
+                    <strong>Total: R$ <span id="total-price">0.00</span></strong>
+                </div>
+                <button class="btn" id="checkout-btn" style="display: none;">Finalizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BoutiqueDaModa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

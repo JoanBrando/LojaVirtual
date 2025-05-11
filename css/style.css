@@ -1,0 +1,424 @@
+/* Estilos Globais */
+:root {
+    --primary-color: #ccae55; 
+    --secondary-color: #aaaa;
+    --text-color: #fff;
+    --bg-color: #405862;
+    --light-gray: #f4f4f4;
+    --dark-gray: #555;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #9e8437;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: var(--text-color);
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.navbar .nav-links .dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.navbar .nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px; /* Espaçamento para não sobrepor o link principal */
+}
+
+.navbar .nav-links .dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar .nav-links .dropdown-content a:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+.navbar .nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar #cart-count {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../img/banner.jpg') no-repeat center center/cover; /* Substitua com sua imagem */
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative; /* Para o efeito de rolagem */
+}
+
+.hero-section::before { /* Overlay para escurecer a imagem de fundo e melhorar a legibilidade do texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-section .container {
+    position: relative; /* Para garantir que o conteúdo fique acima do overlay */
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Seções */
+section {
+    padding: 80px 0; /* Aumentar padding para compensar o header fixo */
+    opacity: 0; /* Inicialmente invisível para efeito de rolagem */
+    transform: translateY(50px); /* Deslocado para baixo para efeito de rolagem */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Products Section */
+.products-section h2 {
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--bg-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens dos produtos */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.product-card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Category Sections - podem herdar estilos de .products-section */
+.category-section {
+    background-color: var(--light-gray);
+}
+
+/* Cart Section */
+.cart-section {
+    background-color: #f9f9f9;
+}
+
+#cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+#cart-items .cart-item img {
+    width: 50px; /* Tamanho pequeno para a imagem no carrinho */
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+#cart-items .cart-item-details {
+    flex-grow: 1;
+}
+
+#cart-items .cart-item-details p {
+    margin: 0;
+}
+
+#cart-items .remove-item-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+#cart-items .remove-item-btn:hover {
+    background: #e74c3c;
+}
+
+#cart-total {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+#checkout-btn {
+    display: block;
+    margin: 20px auto 0;
+    width: fit-content;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-gray);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Efeitos de Rolagem - Itens individuais */
+.scroll-effect-item {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-effect-item.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links {
+        display: none; /* Esconde os links por padrão */
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .navbar .nav-links.active {
+        display: flex; /* Mostra os links quando o menu está ativo */
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .nav-links .dropdown-content {
+        position: static; /* Remove o posicionamento absoluto */
+        box-shadow: none;
+        background-color: transparent;
+        padding-left: 15px; /* Adiciona um recuo para os subitens */
+    }
+    .navbar .nav-links .dropdown-content a {
+        padding: 10px;
+        color: var(--dark-gray); /* Cor diferente para subitens no mobile */
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
